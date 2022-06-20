@@ -1,0 +1,48 @@
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="http://localhost:7777/">Home</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Xem Thông tin Sinh Viên</li>
+  </ol>
+</nav>
+
+
+
+<div class="viewsinhvien p-5" >
+    {{#each rows}}
+    <div class="row mb-5">
+        <div class="col text-center">
+            <h3>{{this.name}}</h3>
+        </div>
+    </div>
+
+    <div class="row">
+    <div class="col">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Tên</th>
+            <th scope="col">Ngày Sinh</th>
+            <th scope="col">Lớp</th>
+            <th scope="col">Giới tính</th>
+            <th scope="col">Môn học</th>
+           
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">{{this.hoten}}</th>
+            <td>{{this.ngaysinh}}</td>
+            <td>{{this.lop}}</td>
+            <td>{{this.giotinh}}</td>
+            <td>{{this.mochoc}}</td>
+     
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+    {{/each}}
+
+
+</div>

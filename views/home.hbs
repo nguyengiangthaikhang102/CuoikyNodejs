@@ -1,0 +1,44 @@
+{{#if removedSinhvien}}
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+    Xóa thành công.
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{{/if}}
+
+<div class="row">
+  <div class="col-6"><h1>Sinh Viên</h1></div>
+  <div class="col-6 d-flex justify-content-end">
+    <a href="/createsinhvien" type="button" class="btn btn-primary align-self-center">Thêm Sinh Viên</a>
+  </div>
+</div>
+
+
+<table class="table table-bordered">
+  <thead class="thead-dark">
+    <tr>
+
+            <th scope="col">Tên</th>
+            <th scope="col">Lớp</th>
+            <th scope="col">Môn học</th>
+      <th scope="col" class="text-center">Thao tác</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    {{#each rows}}
+    <tr>
+
+      
+            <th>{{this.hoten}}</th>
+            <td>{{this.lop}}</td>
+            <td>{{this.mochoc}}</td>
+      <td class="text-center">
+        <a href="/view-sinhvien/{{this.id}}" type="button" class="btn btn-success btn-small"><i class="bi bi-eye"></i>Xem</a>
+        <a href="/edit-sinhvien/{{this.id}}" type="button" class="btn btn-warning btn-small"><i class="bi bi-pencil"></i>Sửa</a>
+        <a href="/{{this.id}}" type="button" class="btn btn-danger btn-small"><i class="bi bi-person"></i>Xóa</a>
+      </td>
+    </tr>
+
+    {{/each}}
+  </tbody>
+</table>
